@@ -66,14 +66,12 @@ for (n in 1:length(f)){
   
   df$CO_ppb <- df[,n]/231                             #231 uV per ppb  = generic sensitivity taken from C:\Users\Anika\Dropbox (Cambridge University)\COPE - sensitivities table
   names(df)[names(df) == "CO_ppb"] <- paste("CO_ppb", f[n], sep = "_")
-  df$CO_ppm <- df[,n]/231000                             #231 uV per ppb  = generic sensitivity taken from C:\Users\Anika\Dropbox (Cambridge University)\COPE - sensitivities table
+  df$CO_ppm <- df[,n]/231000                            
   names(df)[names(df) == "CO_ppm"] <- paste("CO_ppm", f[n], sep = "_")
   
 }
 
 Bj_CO_ppb <- data.frame("date"=Bj_CO$date,df )
-#timePlot(Bj_CO_ppb, pollutant = c("CO_uV_155","CO_ppb_155"))   #check if it worked
-
 
 
 saveRDS(Bj_CO_ppb, "C:/Users/Anika/Dropbox (Cambridge University)/beijing/data/aggr/Beijing_split_by_pollutants/Bj_CO_ppb_generic_conversion.rds")
@@ -97,13 +95,13 @@ for (n in 1:length(f)){
   names(df)[names(df) == "CO_ppb"] <- paste("CO_ppb", f[n], sep = "_")
 }
 for (n in 1:length(f)){
-df$CO_ppm <- df[,n]/231000                             #231 uV per ppb  = generic sensitivity taken from C:\Users\Anika\Dropbox (Cambridge University)\COPE - sensitivities table
+df$CO_ppm <- df[,n]/231000                           
   names(df)[names(df) == "CO_ppm"] <- paste("CO_ppm", f[n], sep = "_")
   
 }
 
 Pg_CO_ppb <- data.frame("date"=Pg_CO$date,df )
-#timePlot(Pg_CO_ppb, pollutant = c("CO_uV_100","CO_ppb_100","CO_ppm_100"))   #check if it worked
+
 
 
 
@@ -128,7 +126,6 @@ for (n in 1:length(f)){
 }
 
 Pg_NO2_ppb <- data.frame("date"=Pg_NO2$date,df )
-#timePlot(Pg_NO2_ppb, pollutant = c("NO2_uV_100","NO2_ppb_100","NO2_ppm_100"))   #check if it worked
 
 
 
